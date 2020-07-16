@@ -233,6 +233,20 @@ Es una floristeria
 
 
 
+
+
+
+
+
+
+    <script type="text/javascript" src="carp/java.js"></script>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2100.1948427114403!2d12.4914500115318!3d41.8901896101341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28f1c82e908503c4!2sColiseo%20de%20Roma!5e0!3m2!1ses!2sco!4v1594839903675!5m2!1ses!2sco" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="mapa1"></iframe>
+
+  
+</body>
+</html>
+
 body {
 	width: 100px;
 	height: 100px;
@@ -951,104 +965,3 @@ p{
 	margin:0;
 	background-color:#ffffff;
 }
-
-
-
-
-
-
-    <script type="text/javascript" src="carp/java.js"></script>
-
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2100.1948427114403!2d12.4914500115318!3d41.8901896101341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28f1c82e908503c4!2sColiseo%20de%20Roma!5e0!3m2!1ses!2sco!4v1594839903675!5m2!1ses!2sco" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="mapa1"></iframe>
-
-  
-</body>
-</html>
-// JavaScript source code
-
-
-
-
-(function () {
-
-    var actualizarhora = function () {
-
-        var fecha = new Date();
-        var day = fecha.getDay();
-        var Nday = fecha.getDate();
-       var  Mes = fecha.getMonth();
-        var year = fecha.getFullYear();
-        var minute = fecha.getMinutes();
-        var hour = fecha.getHours();
-        var segunde = fecha.getSeconds();
-        var ampm;
-
-        if (minute < 10) {
-            minute = "0" + minute;
-        };
-
-        
-        var pdia = document.getElementById("dia");
-        var days = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
-        pdia.textContent = days[day];
-
-        var pday = document.getElementById("ndia");
-        pday.textContent = Nday;
-
-        var pmes = document.getElementById("mes");
-        var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-        pmes.textContent = meses[Mes];
-
-        var pyear = document.getElementById("year");
-        pyear.textContent = year;
-
-        var phora = document.getElementById("hora");
-        phora.textContent = hour;
-        
-        var pminuto = document.getElementById("minuto");
-        pminuto.textContent = minute;
-
-        var pampm = document.getElementById("ampm");
-        if (hour >= 12) {
-            hour = hour - 12;
-            ampm = "PM";
-        }
-        else {
-            ampm = "AM";
-        }
-
-        if (hour == 0) {
-            hour = 12;
-        };
-        if (minute < 10) {
-            minute = "0" + minute;
-        };
-
-        if (segunde < 10) {
-            segunde = "0" + segunde;
-        };
-        pampm.textContent = ampm;
-
-        var psegundo = document.getElementById("segundo");
-        psegundo.textContent = segunde;
-
-        var psaludo = document.getElementById("saludos");
-
-        if (ampm == "AM") {
-            psaludo.textContent = "!BUENOS DIAS!"
-
-        }
-        else {
-            psaludo.textContent = "!BUENAS TARDES!";
-        }
-
-    };
-   
-
-
-    actualizarhora();
-    var interbalo = setInterval(actualizarhora, 1000);
-  
-
-}())
-
